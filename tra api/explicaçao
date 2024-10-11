@@ -1,0 +1,11 @@
+Explicação dos Comentários:
+Botão de busca de imagem: O botão tem um evento de clique associado a ele, que executa a função para buscar a imagem de cachorro da API.
+
+Imagem de cachorro: A imagem é exibida dentro de uma tag <img>, que será atualizada com a URL recebida da API.
+
+Função fetch:
+
+O fetch faz uma requisição HTTP para a URL da API.
+A função .then(response => response.json()) converte a resposta da API, que vem no formato JSON, em um objeto JavaScript.
+A função .then(data => { ... }) usa o dado recebido (a URL da imagem) para atualizar o atributo src da imagem exibida no HTML.
+O .catch() trata erros, caso a requisição falhe, e exibe uma mensagem de erro no console.

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POC com Fetch</title>
+</head>
+<body>
+    <h1>Imagens de Cachorros Aleatórios</h1>
+
+    <!-- Botão que o usuário clicará para buscar a imagem -->
+    <button id="fetch-dog">Buscar Imagem</button>
+
+    <!-- Contêiner que armazenará a imagem retornada pela API -->
+    <div id="dog-image-container">
+        <!-- Imagem que será atualizada com a URL da API -->
+        <img id="dog-image" src="" alt="Imagem de cachorro aparecerá aqui" style="max-width: 500px;">
+    </div>
+
+    <script>
+        // Seleciona o botão pelo ID e adiciona um listener para o evento de clique
+        document.getElementById('fetch-dog').addEventListener('click', () => {
+            // Faz a requisição usando fetch para obter uma imagem aleatória de cachorro da API
+            fetch('https://dog.ceo/api/breeds/image/random')
+                // Converte a resposta da API para JSON
+                .then(response => response.json())
+                // Atualiza a imagem no DOM com a URL retornada pela API
+                .then(data => {
+                    document.getElementById('dog-image').src = data.message;
+                })
+                // Exibe uma mensagem de erro no console caso a requisição falhe
+                .catch(error => {
+                    console.error('Erro ao buscar imagem:', error);
+                });
+        });
+    </script>
+</body>
+</html>
