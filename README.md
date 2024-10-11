@@ -1,5 +1,5 @@
  # POC com Fetch - Imagens de Cachorros Aleatórios
-o Codigo utilizado no <body> cria um botão que é utilizado como acionador do evento que realiza a busca da imagem aleatoria pela API.
+o Codigo utilizado no <body> cria um botão que é utilizado como acionador do evento que realiza a busca da imagem aleatoria pela API "Dog CEO".
 
 ```html
 <body>
